@@ -1,0 +1,63 @@
+﻿@page "{id:Guid}"
+@model Bloggie.Web.Pages.Bloggies.EditModel
+@{
+
+}
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<form method="post">
+    <h1 class="mb-3">Edit Employee</h1>
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success">
+            @message
+        </div>
+    }
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.Id" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Heading</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.Heading" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">PageTitle</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.PageTitle" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Content</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.Content" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ShortDescription</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.ShortDescription" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">FeaturedImageUrl</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.FeaturedImageUrl" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">UrlHandle</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.UrlHandle" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">PublishedDate</label>
+        <input type="date" class="form-control" asp-for="EditBlogSpot.PublishedDate" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input type="text" class="form-control" asp-for="EditBlogSpot.Author" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Visible</label>
+        <input type="bool" class="form-control" asp-for="EditBlogSpot.Visible" />
+    </div>
+    <div class="mb-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary" asp-page-handler="Update">Update</button>
+        <button type="submit" class="btn btn-primary" asp-page-handler="Delete">Delete</button>
+        <a href="\bloggies\List" class="btn btn-primary">Back To List</a>
+
+    </div>
+</form>
